@@ -21,7 +21,7 @@ namespace CenterBookingSystem.Controllers
         }
         public IActionResult Create(int spaceId,DateTime eventDate,TimeSpan timeSlot,string organizerID)
         {
-            var data=new Booking{SpaceID=spaceId,EventDate=eventDate,TimeSlot=timeSlot,OrgaizerID=organizerID};
+            var data=new Booking{SpaceID=spaceId,EventDate=eventDate,TimeSlot=timeSlot,OrganizerID=organizerID};
             var result=_context.Bookings.Add(data);
             if(result == null)
             throw new EventBookingException("Space already booked.");
