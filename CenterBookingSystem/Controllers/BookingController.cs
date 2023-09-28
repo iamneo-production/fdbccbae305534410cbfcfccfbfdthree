@@ -20,10 +20,10 @@ namespace CenterBookingSystem.Controllers
             return View();
         }
         public IActionResult Create(int spaceId,DateTime eventDate,TimeSpan timeSlot,string organizerID)
-        {
-            var result=_context.Bookings.Add(spaceId,eventDate,timeSlot,organizerID);
-            if(!result)
-            throw new Exception()
+        {var data=new Booking{spaceId,eventDate,timeSlot,organizerID};
+            var result=_context.Bookings.Add(data);
+            if(result == null)
+            throw new EventBookingExceptioin("Space already booked.");
             return RedirectToAction("Confirmation");
         }
         public IActionResult Confirmation(int bookingID)
