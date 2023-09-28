@@ -10,7 +10,11 @@ using CenterBookingSystem.Models;
 namespace CenterBookingSystem.Controllers
 {
     public class BookingController : Controller
-    {
+    {     private readonly BookingDbContext _context;
+          public BookingController(BookingDbContext context)
+        {
+            _context = context;
+        }
           public IActionResult Index()
         {
             return View();
