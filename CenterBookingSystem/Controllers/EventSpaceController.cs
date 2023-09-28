@@ -7,7 +7,7 @@ using CenterBookingSystem.Models;
 using CenterBookingSystem.Data;
 
 namespace CenterBookingSystem.Controllers
-{
+{  
     public class EventSpaceController : Controller
     {         private readonly BookingDbContext _context;
           public EventSpaceController(BookingDbContext context)
