@@ -21,7 +21,9 @@ namespace CenterBookingSystem.Controllers
         }
         public IActionResult Create(int spaceId,DateTime eventDate,TimeSpan timeSlot,string organizerID)
         {
-            
+            var result=_context.Bookings.Add(spaceId,eventDate,timeSlot,organizerID);
+            if(!result)
+            throw new Exception()
             return RedirectToAction("Confirmation");
         }
         public IActionResult Confirmation(int bookingID)
