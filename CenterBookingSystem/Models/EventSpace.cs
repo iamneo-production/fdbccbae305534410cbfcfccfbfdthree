@@ -5,7 +5,9 @@ using System.ComponentModel.DataAnnotations;
 namespace CenterBookingSystem.Models
 {
           public class EventSpace{
+                [Key]
                 public int SpaceID{get;set;}
+                [MaxLength(25)]
                 public string Name{get;set;}
                 public int Capacity{get;set;}
                 public bool Availability{get;set;}
