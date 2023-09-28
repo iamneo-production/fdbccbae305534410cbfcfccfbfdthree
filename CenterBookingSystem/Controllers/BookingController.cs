@@ -21,6 +21,7 @@ namespace CenterBookingSystem.Controllers
         }
         public IActionResult Create(int spaceId,DateTime eventDate,TimeSpan timeSlot,string organizerID)
         {
+            
             return RedirectToAction("Confirmation");
         }
         public IActionResult Confirmation(int bookingID)
