@@ -22,9 +22,11 @@ namespace CenterBookingSystem.Controllers
         public IActionResult Create(int spaceId,DateTime eventDate,TimeSpan timeSlot,string organizerID)
         {
             spaceId=1;
-            eventDate=DateTime.Now;
+            eventDate=DateTime.Parse("2023-09-15");
             timeSlot=TimeSpan.Parse("10.30");
             organizerID="232";
+            if(eventDate<DateTime.Now)
+             throw new EventBookingException("Space already booked.");   
             var data=new Booking{SpaceID=spaceId,EventDate=eventDate,TimeSlot=timeSlot,OrganizerID=organizerID};
             var result=_context.Bookings.Add(data);
             if(result == null)
