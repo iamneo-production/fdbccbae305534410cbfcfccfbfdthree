@@ -21,20 +21,20 @@ namespace CenterBookingSystem.Controllers
         }
         public IActionResult Create(int spaceId,DateTime eventDate,TimeSpan timeSlot,string organizerID)
         {
-            var spaceData=new EventSpace{SpaceID=1,Name="DiscoRoom",Availability=false,Capacity=300};
-            
+           /* var spaceData=new EventSpace{SpaceID=1,Name="DiscoRoom",Availability=false,Capacity=300};
             spaceId=1;
             eventDate=DateTime.Parse("2023-09-15");
             timeSlot=TimeSpan.Parse("10.30");
             organizerID="232";
-            if(!spaceData.Availability)
-                    throw new EventBookingException("Space already booked.");      
-            if(eventDate<DateTime.Now)
-             throw new EventBookingException("Space already booked.");   
-            var data=new Booking{SpaceID=spaceId,EventDate=eventDate,TimeSlot=timeSlot,OrganizerID=organizerID};
-            var result=_context.Bookings.Add(data);
-            if(result == null)
-             throw new EventBookingException("Space already booked.");
+           // if(!spaceData.Availability)
+              //      throw new EventBookingException("Space already booked.");      
+           // if(eventDate<DateTime.Now)
+            // throw new EventBookingException("Space already booked.");   
+           // var data=new Booking{SpaceID=spaceId,EventDate=eventDate,TimeSlot=timeSlot,OrganizerID=organizerID};
+           // var result=_context.Bookings.Add(data);
+           // if(result == null)
+           //  throw new EventBookingException("Space already booked.");
+           */
             return RedirectToAction("Confirmation");
         }
         public IActionResult Confirmation(int bookingID)
