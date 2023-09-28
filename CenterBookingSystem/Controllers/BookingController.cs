@@ -11,6 +11,18 @@ namespace CenterBookingSystem.Controllers
 {
     public class BookingController : Controller
     {
+          public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult Create(int spaceId,DateTime eventDate,TimeSpan timeSlot,string organizerID)
+        {
+            return RedirectToAction("Confirmation");
+        }
+        public IActionResult Confirmation(int bookingID)
+        {
+            return View(bookingID);
+        }
         // Write your BookingController here...
         // Index() - returns view
         // Create(int spaceId, DateTime eventDate, TimeSpan timeSlot, string organizerID) 

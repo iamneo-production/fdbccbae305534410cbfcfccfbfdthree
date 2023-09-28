@@ -10,6 +10,10 @@ namespace CenterBookingSystem.Controllers
 {
     public class EventSpaceController : Controller
     {        
+          public IActionResult AvailableSpaces()
+        {
+            return View();
+        }
         // Write your EventSpaceController here...
         // AvailableSpaces() - returns View(availableSpaces)
         //                   - Display available event spaces
